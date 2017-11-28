@@ -5,28 +5,15 @@ namespace zad2
 {
     public class Individual
     {
-        public BitArray chromosome;
-        public int x;
-        public double fitness;
+        public int[] chromosome;
+        public int fitness;
         public Individual parent1, parent2;
 
-        public Individual(int x, Individual parent1, Individual parent2)
-        {
-            chromosome = Encode(x);
-            chromosome.Length = PopulationInfo.stringSize;
-            Reverse();
-            this.x = x;
-            fitness = PopulationInfo.Function(x);
-            this.parent1 = parent1;
-            this.parent2 = parent2;
-        }
-
-        public Individual(BitArray chromosome, Individual parent1, Individual parent2)
+        /*public Individual(int[] chromosome, Individual parent1, Individual parent2)
         {
             this.chromosome = chromosome;
             this.parent1 = parent1;
             this.parent2 = parent2;
-            x = Decode(chromosome);
             if (x > PopulationInfo.rightmost)
                 fitness = 0;
             else
@@ -88,6 +75,6 @@ namespace zad2
                 newChromosome1[i] = otherParent.chromosome[i];
             Individual child1 = new Individual(newChromosome1, this, otherParent);
             return child1;
-        }
+        }*/
     }
 }

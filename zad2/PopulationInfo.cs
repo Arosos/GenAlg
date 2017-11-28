@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Drawing;
 
 namespace zad2
 {
@@ -7,39 +9,36 @@ namespace zad2
         public const int maxPopulation = 100, maxString = 30, generationNumber = 15;
         public const double pcross = 0.7, pmutation = 0.2;
 
-        public static int firstGenerationSize, populationSize, stringSize, translation, leftmost, rightmost;
-        static double[] coefficients;
+        public static int firstGenerationSize, populationSize, stringSize;
 
-        public static void GetInfo(string[] args)
+        public static Point[] points;
+
+        public static void GetInfo(string filename)
         {
-            leftmost = int.Parse(args[0]);
-            rightmost = int.Parse(args[1]);
-            populationSize = int.Parse(args[2]);
-
-            firstGenerationSize = rightmost - leftmost + 1;
-            for (int i = 0; i < 10; i++)
-                if (Math.Pow(2, i) > firstGenerationSize)
-                {
-                    stringSize = i;
-                    break;
-                }
-
-            int functionDegree = args.Length - 3;
-            coefficients = new double[functionDegree];
-
-            for (int i = 0, argsIndex = 3; i < functionDegree; i++, argsIndex++)
+            Console.WriteLine(filename);
+            try
             {
-                if (args[argsIndex] != null)
-                    coefficients[i] = double.Parse(args[argsIndex]);
-                else
-                    break;
+                using (StreamReader streamReader = new StreamReader(filename))
+                {
+                    string[] data = streamReader.ReadToEnd().Split('\n');
+                    int counter = 0;
+                    foreach (string s in data)
+                    {
+                        string[] coordinates = s.Split(' ');
+                        points[counter].X = int.Parse(coordinates[0]);
+                        points[counter++].Y = int.Parse(coordinates[1]);
+                    }
+                    Console.WriteLine(points);
+                }
             }
-
-            if (leftmost < 0)
-                translation = Math.Abs(leftmost);
+            catch (Exception e)
+            {
+                Console.WriteLine("File not found");
+                Console.WriteLine(e.Message);
+            }
         }
 
-        public static double Function(int x)
+        /*public static double Function(int x)
         {
             double sum = 0.0;
 
@@ -49,6 +48,6 @@ namespace zad2
             }
 
             return sum;
-        }
+        }*/
     }
 }

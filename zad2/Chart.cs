@@ -30,10 +30,10 @@ namespace zad2
                 avSeries.Points.Add(g.average);
                 maxSeries.Points.Add(g.max);
                 minSeries.Points.Add(g.min);
-                foreach (Individual i in Program.generations[0].population)
-                    functionSeries.Points.AddXY(i.x, i.fitness);
-                foreach (Individual i in Program.generations[Program.generations.Length - 1].population)
-                    indSeries.Points.AddXY(i.x, i.fitness);
+               // foreach (Individual i in Program.generations[0].population)
+                    //functionSeries.Points.AddXY(i.x, i.fitness);
+                //foreach (Individual i in Program.generations[Program.generations.Length - 1].population)
+                    //indSeries.Points.AddXY(i.x, i.fitness);
             }
         }
     }

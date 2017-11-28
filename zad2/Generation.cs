@@ -29,7 +29,7 @@ namespace zad2
             Individual[] population = new Individual[PopulationInfo.firstGenerationSize];
             for (int i = 0; i < PopulationInfo.firstGenerationSize; i++)
             {
-                population[i] = new Individual(x, null, null);
+                //population[i] = new Individual(x, null, null);
                 x++;
             }
 

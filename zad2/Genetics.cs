@@ -20,23 +20,23 @@ namespace zad2
             return generation.population[j];
         }
 
-        public static void Crossover(Individual parent1, Individual parent2, out Individual child1, out Individual child2)
+        /*public static void Crossover(Individual parent1, Individual parent2, out Individual child1, out Individual child2)
         {
-            int jcross;
+            /*int jcross;
             if (Flip(PopulationInfo.pcross))
                 jcross = random.Next(0, PopulationInfo.stringSize - 1);
             else
                 jcross = PopulationInfo.stringSize - 1;
-            child1 = parent1.Cross(parent2, jcross, out child2);
+            //child1 = parent1.Cross(parent2, jcross, out child2);
             Console.WriteLine(jcross);
-        }
+        }*/
 
         public static void Mutation(Individual i)
         {
             if (Flip(PopulationInfo.pmutation))
             {
                 int jmutation = random.Next(0, PopulationInfo.stringSize);
-                i.chromosome[jmutation] = !i.chromosome[jmutation];
+                //i.chromosome[jmutation] = !i.chromosome[jmutation];
                 Console.WriteLine("Mutation at " + jmutation);
             }
         }

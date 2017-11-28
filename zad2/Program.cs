@@ -10,10 +10,9 @@ namespace zad2
         [STAThread]
         static void Main(string[] args)
         {
-            PopulationInfo.GetInfo(args);
-            generations = new Generation[PopulationInfo.generationNumber];
+            /*generations = new Generation[PopulationInfo.generationNumber];
 
-            generations[0] = Generation.FirstGeneration(PopulationInfo.leftmost);
+           // generations[0] = Generation.FirstGeneration(PopulationInfo.leftmost);
 
             Console.WriteLine(generations[0]);
 
@@ -40,7 +39,10 @@ namespace zad2
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Chart());
+            Application.Run(new Chart());*/
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainWindow());
         }
     }
 }
