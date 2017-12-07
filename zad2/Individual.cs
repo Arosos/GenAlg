@@ -6,75 +6,25 @@ namespace zad2
     public class Individual
     {
         public int[] chromosome;
-        public int fitness;
+        public double fitness;
         public Individual parent1, parent2;
 
-        /*public Individual(int[] chromosome, Individual parent1, Individual parent2)
+        public Individual(int[] chromosome, Individual parent1, Individual parent2)
         {
             this.chromosome = chromosome;
             this.parent1 = parent1;
             this.parent2 = parent2;
-            if (x > PopulationInfo.rightmost)
-                fitness = 0;
-            else
-                fitness = PopulationInfo.Function(x);
-        }
-
-        BitArray Encode(int x)
-        {
-            BitArray bitArray;
-            if (PopulationInfo.translation == 0)
-                bitArray = new BitArray(new int[1] { x });
-            else
-            {
-                x += PopulationInfo.translation;
-                bitArray = new BitArray(new int[1] { x });
-            }
-            return bitArray;
-        }
-
-        int Decode(BitArray array)
-        {
-            int sum = 0;
-            for (int i = 0; i < PopulationInfo.stringSize; i++)
-                sum += array[i] ? (int)Math.Round(Math.Pow(2, PopulationInfo.stringSize - i - 1)) : 0;
-            return sum - PopulationInfo.translation;
+            fitness = PopulationInfo.Function(chromosome);
         }
 
         public override string ToString()
         {
-            string chromosome = "";
+            string s = "Chromosome:\n";
+            foreach (int i in chromosome)
+                s += i.ToString() + ' ';
+            s += "\nFitness: " + fitness;
 
-            foreach (bool bit in this.chromosome)
-                chromosome += bit ? "1" : "0";
-            string parents = (parent1 == null ? "null" : parent1.x.ToString()) + " " + (parent2 == null ? "null" : parent2.x.ToString());
-            return "Chromosome: " + chromosome + " " + "X: " + x + " " + "Fitness: " + Math.Round(fitness, 10) + " " + parents;
+            return s;
         }
-
-        void Reverse()
-        {
-            BitArray tempArray = new BitArray(chromosome);
-            for (int i = 0; i < chromosome.Count; i++)
-                tempArray[i] = chromosome[chromosome.Count - i - 1];
-            chromosome = tempArray;
-        }
-
-        public Individual Cross(Individual otherParent, int cross, out Individual child2)
-        {
-            BitArray newChromosome2 = new BitArray(PopulationInfo.stringSize);
-            for (int i = 0; i < cross + 1; i++)
-                newChromosome2[i] = otherParent.chromosome[i];
-            for (int i = cross + 1; i < PopulationInfo.stringSize; i++)
-                newChromosome2[i] = chromosome[i];
-            child2 = new Individual(newChromosome2, this, otherParent);
-
-            BitArray newChromosome1 = new BitArray(PopulationInfo.stringSize);
-            for (int i = 0; i < cross + 1; i++)
-                newChromosome1[i] = chromosome[i];
-            for (int i = cross + 1; i < PopulationInfo.stringSize; i++)
-                newChromosome1[i] = otherParent.chromosome[i];
-            Individual child1 = new Individual(newChromosome1, this, otherParent);
-            return child1;
-        }*/
     }
 }

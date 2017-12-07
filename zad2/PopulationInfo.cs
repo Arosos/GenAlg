@@ -6,48 +6,60 @@ namespace zad2
 {
     public static class PopulationInfo
     {
-        public const int maxPopulation = 100, maxString = 30, generationNumber = 15;
-        public const double pcross = 0.7, pmutation = 0.2;
+        public const int maxPopulation = 100, maxString = 30;
+        public const double pcross = 0.7;
 
-        public static int firstGenerationSize, populationSize, stringSize;
+        public static int firstGenerationSize, populationSize = 10, stringSize, generationNumber = 15;
 
-        public static Point[] points;
+        public static double pmutation = 0.2;
 
-        public static void GetInfo(string filename)
+        public static Point[] points = new Point[populationSize];
+
+        public static void GetInfo(string filename, int populationSize, int generationNumber, double pmutation)
         {
-            Console.WriteLine(filename);
+            PopulationInfo.populationSize = populationSize;
+            PopulationInfo.generationNumber = generationNumber;
+            PopulationInfo.pmutation = pmutation;
             try
             {
                 using (StreamReader streamReader = new StreamReader(filename))
                 {
-                    string[] data = streamReader.ReadToEnd().Split('\n');
+                    string line;
                     int counter = 0;
-                    foreach (string s in data)
+                    while ((line = streamReader.ReadLine()) != null)
                     {
-                        string[] coordinates = s.Split(' ');
+                        string[] coordinates = line.Split(' ');
                         points[counter].X = int.Parse(coordinates[0]);
                         points[counter++].Y = int.Parse(coordinates[1]);
                     }
-                    Console.WriteLine(points);
+                    stringSize = counter;
                 }
             }
-            catch (Exception e)
+            catch (IOException e)
             {
                 Console.WriteLine("File not found");
                 Console.WriteLine(e.Message);
             }
         }
 
-        /*public static double Function(int x)
+        public static double Function(int[] x)
         {
             double sum = 0.0;
-
-            for (int i = 0; i < coefficients.Length; i++)
+            
+            for (int i = 1; i < x.Length; i++)
             {
-                sum += Math.Pow(x, coefficients.Length - i - 1) * coefficients[i];
+                Point point1 = points[x[i - 1]];
+                Point point2 = points[x[i]];
+                sum += Distance(point1, point2);
             }
+            sum += Distance(points[x[x.Length - 1]], points[x[0]]);
 
-            return sum;
-        }*/
+            return Math.Pow(1 / sum, 7);
+        }
+
+        static double Distance(Point x, Point y)
+        {
+            return Math.Sqrt(Math.Pow(x.X - y.X, 2) + Math.Pow(x.Y - y.Y, 2));
+        }
     }
 }

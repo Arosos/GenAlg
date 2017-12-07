@@ -29,8 +29,8 @@ namespace zad2
 
         private void GenerateButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(filename);
-            PopulationInfo.GetInfo(filename);
+            PopulationInfo.GetInfo(filename, (int)populationSize.Value, (int)generationNumber.Value, (double)mutation.Value);
+            Program.Generate();
         }
     }
 }

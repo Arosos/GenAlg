@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace zad2
 {
@@ -6,6 +7,8 @@ namespace zad2
     {
         public Individual[] population;
         public double sumfitness, average, min, max;
+        
+        static Random r = new Random();
 
         public Generation(Individual[] population)
         {
@@ -23,17 +26,34 @@ namespace zad2
             average = sumfitness / population.Length;
         }
 
-        public static Generation FirstGeneration(int leftmost)
+        public static Generation FirstGeneration()
         {
-            int x = leftmost;
-            Individual[] population = new Individual[PopulationInfo.firstGenerationSize];
-            for (int i = 0; i < PopulationInfo.firstGenerationSize; i++)
+            Individual[] population = new Individual[PopulationInfo.populationSize];
+
+            for (int i = 0; i < population.Length; i++)
             {
-                //population[i] = new Individual(x, null, null);
-                x++;
+                int[] chromosome = RandomSequence();
+                population[i] = new Individual(chromosome, null, null);
             }
 
             return new Generation(population);
+        }
+
+        static int[] RandomSequence()
+        {
+            int[] sequence = new int[PopulationInfo.populationSize];
+            List<int> indices = new List<int>();
+            for (int i = 0; i < PopulationInfo.populationSize; i++)
+                indices.Add(i);
+
+            int j = 0;
+            while (indices.Count > 0)
+            {
+                sequence[j] = indices[r.Next(0, indices.Count)];
+                indices.Remove(sequence[j]);
+                j++;
+            }
+            return sequence;
         }
 
         public override string ToString()

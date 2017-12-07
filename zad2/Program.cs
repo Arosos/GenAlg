@@ -5,18 +5,23 @@ namespace zad2
 {
     class Program
     {
-        public static Generation[] generations;
+        public static Generation[] generations = new Generation[PopulationInfo.generationNumber];
 
         [STAThread]
         static void Main(string[] args)
         {
-            /*generations = new Generation[PopulationInfo.generationNumber];
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainWindow());
+        }
 
-           // generations[0] = Generation.FirstGeneration(PopulationInfo.leftmost);
+        public static void Generate()
+        {
+            generations[0] = Generation.FirstGeneration();
 
             Console.WriteLine(generations[0]);
 
-            for (int i = 1; i < PopulationInfo.generationNumber; i++)
+            /*for (int i = 1; i < PopulationInfo.generationNumber; i++)
             {
                 Generation generation = generations[i - 1];
                 Individual[] population = new Individual[PopulationInfo.populationSize];
@@ -40,9 +45,6 @@ namespace zad2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Chart());*/
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
         }
     }
 }
