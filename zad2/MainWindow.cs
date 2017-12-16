@@ -13,7 +13,7 @@ namespace zad2
 {
     public partial class MainWindow : Form
     {
-        string filename;
+        string filename = @"..\..\..\data\TownCoordinates.txt";
 
         public MainWindow()
         {
@@ -22,7 +22,7 @@ namespace zad2
 
         private void PickFileButton_Click(object sender, EventArgs e)
         {
-            openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+            openFileDialog1.InitialDirectory = Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName).FullName, "data");
             DialogResult result = openFileDialog1.ShowDialog();
             filename = openFileDialog1.FileName;
         }

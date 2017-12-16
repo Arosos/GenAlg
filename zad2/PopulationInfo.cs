@@ -41,25 +41,5 @@ namespace zad2
                 Console.WriteLine(e.Message);
             }
         }
-
-        public static double Function(int[] x)
-        {
-            double sum = 0.0;
-            
-            for (int i = 1; i < x.Length; i++)
-            {
-                Point point1 = points[x[i - 1]];
-                Point point2 = points[x[i]];
-                sum += Distance(point1, point2);
-            }
-            sum += Distance(points[x[x.Length - 1]], points[x[0]]);
-
-            return Math.Pow(1 / sum, 7);
-        }
-
-        static double Distance(Point x, Point y)
-        {
-            return Math.Sqrt(Math.Pow(x.X - y.X, 2) + Math.Pow(x.Y - y.Y, 2));
-        }
     }
 }

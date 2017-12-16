@@ -21,7 +21,7 @@ namespace zad2
 
             Console.WriteLine(generations[0]);
 
-            /*for (int i = 1; i < PopulationInfo.generationNumber; i++)
+            for (int i = 1; i < PopulationInfo.generationNumber; i++)
             {
                 Generation generation = generations[i - 1];
                 Individual[] population = new Individual[PopulationInfo.populationSize];
@@ -41,10 +41,8 @@ namespace zad2
 
             foreach (Generation g in generations)
                 Console.WriteLine(g);
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Chart());*/
+            
+            Application.Run(new Chart());
         }
     }
 }

@@ -25,11 +25,19 @@ namespace zad2
 
         public static void Crossover(Individual parent1, Individual parent2, out Individual child1, out Individual child2)
         {
-            int crossoverPoint1 = random.Next(0, PopulationInfo.stringSize - 1);
-            int crossoverPoint2 = random.Next(0, PopulationInfo.stringSize - 1);
-            Console.WriteLine(crossoverPoint1 + " " + crossoverPoint2);
-            child1 = Cross(parent1, parent2, crossoverPoint1, crossoverPoint2);
-            child2 = Cross(parent2, parent1, crossoverPoint1, crossoverPoint2);
+            if (Flip(PopulationInfo.pcross))
+            {
+                int crossoverPoint1 = random.Next(0, PopulationInfo.stringSize - 1);
+                int crossoverPoint2 = random.Next(0, PopulationInfo.stringSize - 1);
+                Console.WriteLine(crossoverPoint1 + " " + crossoverPoint2);
+                child1 = Cross(parent1, parent2, crossoverPoint1, crossoverPoint2);
+                child2 = Cross(parent2, parent1, crossoverPoint1, crossoverPoint2);
+            }
+            else
+            {
+                child1 = new Individual(parent1);
+                child2 = new Individual(parent2);
+            }
         }
 
         static Individual Cross(Individual parent1, Individual parent2, int crossoverPoint1, int crossoverPoint2)

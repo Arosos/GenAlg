@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Drawing;
 
 namespace zad2
 {
@@ -14,7 +15,15 @@ namespace zad2
             this.chromosome = chromosome;
             this.parent1 = parent1;
             this.parent2 = parent2;
-            fitness = PopulationInfo.Function(chromosome);
+            fitness = Function(chromosome);
+        }
+
+        public Individual(Individual i)
+        {
+            chromosome = i.chromosome;
+            parent1 = i.parent1;
+            parent2 = i.parent2;
+            fitness = i.fitness;
         }
 
         public override string ToString()
@@ -25,6 +34,26 @@ namespace zad2
             s += "\nFitness: " + fitness;
 
             return s;
+        }
+
+        double Function(int[] x)
+        {
+            double sum = 0.0;
+
+            for (int i = 1; i < x.Length; i++)
+            {
+                Point point1 = PopulationInfo.points[x[i - 1]];
+                Point point2 = PopulationInfo.points[x[i]];
+                sum += Distance(point1, point2);
+            }
+            sum += Distance(PopulationInfo.points[x[x.Length - 1]], PopulationInfo.points[x[0]]);
+
+            return Math.Pow(1 / sum, 7);
+        }
+
+        double Distance(Point x, Point y)
+        {
+            return Math.Sqrt(Math.Pow(x.X - y.X, 2) + Math.Pow(x.Y - y.Y, 2));
         }
     }
 }
