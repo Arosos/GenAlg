@@ -6,22 +6,22 @@ namespace zad2
     public class Generation
     {
         public Individual[] population;
-        public double sumfitness, average, min, max;
+        public double sumfitness, average;
+        public Individual max, min;
         
         static Random r = new Random();
 
         public Generation(Individual[] population)
         {
             this.population = population;
-            min = double.MaxValue;
-            max = double.MinValue;
+            min = max = population[0];
             foreach (Individual i in this.population)
             {
                 sumfitness += i.fitness;
-                if (i.fitness < min)
-                    min = i.fitness;
-                if (i.fitness > max)
-                    max = i.fitness;
+                if (i.fitness < min.fitness)
+                    min = i;
+                if (i.fitness > max.fitness)
+                    max = i;
             }
             average = sumfitness / population.Length;
         }
@@ -41,9 +41,9 @@ namespace zad2
 
         static int[] RandomSequence()
         {
-            int[] sequence = new int[PopulationInfo.populationSize];
+            int[] sequence = new int[PopulationInfo.stringSize];
             List<int> indices = new List<int>();
-            for (int i = 0; i < PopulationInfo.populationSize; i++)
+            for (int i = 0; i < PopulationInfo.stringSize; i++)
                 indices.Add(i);
 
             int j = 0;
@@ -63,8 +63,8 @@ namespace zad2
                 s += i.ToString() + "\n";
             s += "Sumfitness: " + sumfitness;
             s += "\nAverage value: " + average;
-            s += "\nMax value: " + max;
-            s += "\nMin value: " + min;
+            s += "\nMax value: " + max.fitness;
+            s += "\nMin value: " + min.fitness;
             s += "\n==============================================================";
 
             return s;
