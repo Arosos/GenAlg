@@ -308,7 +308,6 @@
             0,
             0,
             65536});
-            this.cross.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // MainWindow
             // 

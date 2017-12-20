@@ -17,8 +17,6 @@ namespace zad2
         string filename = @"..\..\..\data\TownCoordinates.txt";
 
         public static Generation[] generations;
-
-        bool firstTime = true;
         
         [STAThread]
         static void Main(string[] args)
@@ -73,26 +71,19 @@ namespace zad2
             PopulationInfo.GetInfo(filename, (int)populationSize.Value, (int)generationNumber.Value, (double)mutation.Value, (double)cross.Value);
             generations = new Generation[PopulationInfo.generationNumber];
             Generate();
-            if (firstTime)
-            {
-                SetupSeries(longestPathChart);
-                SetupSeries(shortestPathChart);
-            }
+            SetupSeries(longestPathChart);
+            SetupSeries(shortestPathChart);
             Display();
         }
 
         void Display()
         {
-            if (!firstTime)
-            {
-                AverageChart.Series["Generation"].Points.Clear();
-                MaxChart.Series["Generation"].Points.Clear();
-                MinChart.Series["Generation"].Points.Clear();
-                shortestPathChart.Series["Path"].Points.Clear();
-                longestPathChart.Series["Path"].Points.Clear();
-            }
-
-            firstTime = false;
+            AverageChart.Series["Generation"].Points.Clear();
+            MaxChart.Series["Generation"].Points.Clear();
+            MinChart.Series["Generation"].Points.Clear();
+            shortestPathChart.Series["Path"].Points.Clear();
+            longestPathChart.Series["Path"].Points.Clear();
+            
             Series avSeries = AverageChart.Series["Generation"];
             Series maxSeries = MaxChart.Series["Generation"];
             Series minSeries = MinChart.Series["Generation"];
@@ -115,15 +106,11 @@ namespace zad2
 
         void SetupSeries(Chart chart)
         {
+            chart.Series["Points"].Points.Clear();
             foreach (Point p in PopulationInfo.points)
                 chart.Series["Points"].Points.AddXY(p.X, p.Y);
             chart.ChartAreas[0].AxisX.Interval = 1;
             chart.ChartAreas[0].AxisY.Interval = 1;
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
