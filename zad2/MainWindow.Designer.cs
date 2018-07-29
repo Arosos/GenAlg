@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pickFileButton = new System.Windows.Forms.Button();
             this.GenerateButton = new System.Windows.Forms.Button();
@@ -82,7 +82,7 @@
             this.pickFileButton.Name = "pickFileButton";
             this.pickFileButton.Size = new System.Drawing.Size(299, 35);
             this.pickFileButton.TabIndex = 0;
-            this.pickFileButton.Text = "Wybierz plik z danymi";
+            this.pickFileButton.Text = "Select data file";
             this.pickFileButton.UseVisualStyleBackColor = true;
             this.pickFileButton.Click += new System.EventHandler(this.PickFileButton_Click);
             // 
@@ -92,7 +92,7 @@
             this.GenerateButton.Name = "GenerateButton";
             this.GenerateButton.Size = new System.Drawing.Size(300, 35);
             this.GenerateButton.TabIndex = 1;
-            this.GenerateButton.Text = "Generuj";
+            this.GenerateButton.Text = "Generate";
             this.GenerateButton.UseVisualStyleBackColor = true;
             this.GenerateButton.Click += new System.EventHandler(this.GenerateButton_Click);
             // 
@@ -180,101 +180,101 @@
             // 
             // shortestPathChart
             // 
-            chartArea11.Name = "ChartArea1";
-            this.shortestPathChart.ChartAreas.Add(chartArea11);
+            chartArea1.Name = "ChartArea1";
+            this.shortestPathChart.ChartAreas.Add(chartArea1);
             this.shortestPathChart.Location = new System.Drawing.Point(318, 12);
             this.shortestPathChart.Name = "shortestPathChart";
-            series15.ChartArea = "ChartArea1";
-            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series15.Color = System.Drawing.Color.Red;
-            series15.Name = "Path";
-            series15.XValueMember = "1";
-            series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series15.YValueMembers = "1";
-            series15.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series16.Color = System.Drawing.Color.Blue;
-            series16.Name = "Points";
-            this.shortestPathChart.Series.Add(series15);
-            this.shortestPathChart.Series.Add(series16);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Red;
+            series1.Name = "Path";
+            series1.XValueMember = "1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series1.YValueMembers = "1";
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Color = System.Drawing.Color.Blue;
+            series2.Name = "Points";
+            this.shortestPathChart.Series.Add(series1);
+            this.shortestPathChart.Series.Add(series2);
             this.shortestPathChart.Size = new System.Drawing.Size(300, 300);
             this.shortestPathChart.TabIndex = 9;
             this.shortestPathChart.Text = "chart1";
-            title11.Name = "shortestPathTitle";
-            title11.Text = "Najkrótsza droga";
-            this.shortestPathChart.Titles.Add(title11);
+            title1.Name = "shortestPathTitle";
+            title1.Text = "Shortest Path";
+            this.shortestPathChart.Titles.Add(title1);
             // 
             // longestPathChart
             // 
-            chartArea12.Name = "ChartArea1";
-            this.longestPathChart.ChartAreas.Add(chartArea12);
+            chartArea2.Name = "ChartArea1";
+            this.longestPathChart.ChartAreas.Add(chartArea2);
             this.longestPathChart.Location = new System.Drawing.Point(624, 12);
             this.longestPathChart.Name = "longestPathChart";
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series17.Color = System.Drawing.Color.Red;
-            series17.Name = "Path";
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series18.Color = System.Drawing.Color.Blue;
-            series18.Name = "Points";
-            this.longestPathChart.Series.Add(series17);
-            this.longestPathChart.Series.Add(series18);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Color = System.Drawing.Color.Red;
+            series3.Name = "Path";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series4.Color = System.Drawing.Color.Blue;
+            series4.Name = "Points";
+            this.longestPathChart.Series.Add(series3);
+            this.longestPathChart.Series.Add(series4);
             this.longestPathChart.Size = new System.Drawing.Size(300, 300);
             this.longestPathChart.TabIndex = 10;
             this.longestPathChart.Text = "chart1";
-            title12.Name = "longestPathTitle";
-            title12.Text = "Najdłuższa droga";
-            this.longestPathChart.Titles.Add(title12);
+            title2.Name = "longestPathTitle";
+            title2.Text = "Longest Path";
+            this.longestPathChart.Titles.Add(title2);
             // 
             // AverageChart
             // 
-            chartArea13.Name = "ChartArea1";
-            this.AverageChart.ChartAreas.Add(chartArea13);
+            chartArea3.Name = "ChartArea1";
+            this.AverageChart.ChartAreas.Add(chartArea3);
             this.AverageChart.Location = new System.Drawing.Point(12, 318);
             this.AverageChart.Name = "AverageChart";
-            series19.ChartArea = "ChartArea1";
-            series19.Name = "Generation";
-            this.AverageChart.Series.Add(series19);
+            series5.ChartArea = "ChartArea1";
+            series5.Name = "Generation";
+            this.AverageChart.Series.Add(series5);
             this.AverageChart.Size = new System.Drawing.Size(300, 300);
             this.AverageChart.TabIndex = 11;
             this.AverageChart.Text = "chart1";
-            title13.Name = "Title1";
-            title13.Text = "Średnie przystosowanie";
-            this.AverageChart.Titles.Add(title13);
+            title3.Name = "Title1";
+            title3.Text = "Average fitness per generation";
+            this.AverageChart.Titles.Add(title3);
             // 
             // MaxChart
             // 
-            chartArea14.Name = "ChartArea1";
-            this.MaxChart.ChartAreas.Add(chartArea14);
+            chartArea4.Name = "ChartArea1";
+            this.MaxChart.ChartAreas.Add(chartArea4);
             this.MaxChart.Location = new System.Drawing.Point(318, 318);
             this.MaxChart.Name = "MaxChart";
-            series20.ChartArea = "ChartArea1";
-            series20.Name = "Generation";
-            this.MaxChart.Series.Add(series20);
+            series6.ChartArea = "ChartArea1";
+            series6.Name = "Generation";
+            this.MaxChart.Series.Add(series6);
             this.MaxChart.Size = new System.Drawing.Size(300, 300);
             this.MaxChart.TabIndex = 12;
             this.MaxChart.Text = "chart2";
-            title14.Name = "Title1";
-            title14.Text = "Maksymalne przystosowanie";
-            this.MaxChart.Titles.Add(title14);
+            title4.Name = "Title1";
+            title4.Text = "Maximal fitness";
+            this.MaxChart.Titles.Add(title4);
             // 
             // MinChart
             // 
-            chartArea15.Name = "ChartArea1";
-            this.MinChart.ChartAreas.Add(chartArea15);
+            chartArea5.Name = "ChartArea1";
+            this.MinChart.ChartAreas.Add(chartArea5);
             this.MinChart.Location = new System.Drawing.Point(624, 318);
             this.MinChart.Name = "MinChart";
-            series21.ChartArea = "ChartArea1";
-            series21.Name = "Generation";
-            this.MinChart.Series.Add(series21);
+            series7.ChartArea = "ChartArea1";
+            series7.Name = "Generation";
+            this.MinChart.Series.Add(series7);
             this.MinChart.Size = new System.Drawing.Size(300, 300);
             this.MinChart.TabIndex = 13;
             this.MinChart.Text = "chart3";
-            title15.Name = "Title1";
-            title15.Text = "Minimalne przystosowanie";
-            this.MinChart.Titles.Add(title15);
+            title5.Name = "Title1";
+            title5.Text = "Minimal fitness";
+            this.MinChart.Titles.Add(title5);
             // 
             // label4
             // 
